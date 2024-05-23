@@ -9,20 +9,29 @@ from src.cnnClassifier.entity.config_entity import TrainingConfig
 
 
 
+import tensorflow as tf
+from pathlib import Path
+
+
 class Training:
-    def __init__(self, config: TrainingConfig):
+    def __init__(self, config):
         self.config = config
 
-    
+
     def get_base_model(self):
         self.model = tf.keras.models.load_model(
             self.config.updated_base_model_path
-        )
+    )
+    # Compile the model with a new optimizer
+        self.model.compile(
+            optimizer=tf.keras.optimizers.Adam(),
+            loss=tf.keras.losses.CategoricalCrossentropy(),
+            metrics=['accuracy']
+    )       
 
     def train_valid_generator(self):
-
         datagenerator_kwargs = dict(
-            rescale = 1./255,
+            rescale=1./255,
             validation_split=0.20
         )
 
@@ -32,10 +41,7 @@ class Training:
             interpolation="bilinear"
         )
 
-        valid_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
-            **datagenerator_kwargs
-        )
-
+        valid_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(**datagenerator_kwargs)
         self.valid_generator = valid_datagenerator.flow_from_directory(
             directory=self.config.training_data,
             subset="validation",
@@ -63,14 +69,10 @@ class Training:
             **dataflow_kwargs
         )
 
-    
     @staticmethod
     def save_model(path: Path, model: tf.keras.Model):
         model.save(path)
 
-
-
-    
     def train(self):
         self.steps_per_epoch = self.train_generator.samples // self.train_generator.batch_size
         self.validation_steps = self.valid_generator.samples // self.valid_generator.batch_size
