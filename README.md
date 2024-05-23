@@ -32,7 +32,7 @@ open up you local host and port
 ## MLflow
 Documentation
 
-MLflow tutorial
+
 
 ## cmd
 mlflow ui
@@ -41,7 +41,7 @@ dagshub
 
 ## MLFLOW_TRACKING_URI=
 ## MLFLOW_TRACKING_USERNAME=
-## MLFLOW_TRACKING_PASSWORD=6
+## MLFLOW_TRACKING_PASSWORD=
 python script.py
 
 Run this to export as env variables:
@@ -93,7 +93,7 @@ AWS-CICD-Deployment-with-Github-Actions
 
 2. AmazonEC2FullAccess
 3. Create ECR repo to store/save docker image
-- Save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/chicken
+- Save the URI: 
 4. Create EC2 machine (Ubuntu)
 5. Open EC2 and Install docker in EC2 Machine:
 #optinal
