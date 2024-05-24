@@ -35,13 +35,13 @@ Documentation
 
 
 ## cmd
-mlflow ui
+1. mlflow ui
 dagshub
 dagshub
 
-## MLFLOW_TRACKING_URI=
-## MLFLOW_TRACKING_USERNAME=
-## MLFLOW_TRACKING_PASSWORD=
+1. MLFLOW_TRACKING_URI=
+2. MLFLOW_TRACKING_USERNAME=
+3. MLFLOW_TRACKING_PASSWORD=
 python script.py
 
 ### Run this to export as env variables:
@@ -51,10 +51,10 @@ export MLFLOW_TRACKING_USERNAME
 
 export MLFLOW_TRACKING_PASSWORD
 
-### DVC cmd
-# dvc init
-# dvc repro
-##### dvc dag
+## DVC cmd
+1. dvc init
+2. dvc repro
+3. dvc dag
 About MLflow & DVC
 MLflow
 
