@@ -44,13 +44,14 @@ dagshub
 ## MLFLOW_TRACKING_PASSWORD=
 python script.py
 
-Run this to export as env variables:
+### Run this to export as env variables:
 
 export MLFLOW_TRACKING_URI=
 export MLFLOW_TRACKING_USERNAME 
 
 export MLFLOW_TRACKING_PASSWORD
-DVC cmd
+
+### DVC cmd
 dvc init
 dvc repro
 dvc dag
