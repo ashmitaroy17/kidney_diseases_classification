@@ -52,9 +52,9 @@ export MLFLOW_TRACKING_USERNAME
 export MLFLOW_TRACKING_PASSWORD
 
 ### DVC cmd
-dvc init
-dvc repro
-dvc dag
+## dvc init
+## dvc repro
+## dvc dag
 About MLflow & DVC
 MLflow
 
