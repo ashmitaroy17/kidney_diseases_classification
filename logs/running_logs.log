@@ -655,3 +655,836 @@ x==========x]
 [2024-05-24 19:30:13,921: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-05-24 21:03:17,256: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-24 21:03:17,270: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-24 21:04:13,497: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-24 21:04:13,497: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-24 21:05:08,723: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:05:08] "GET / HTTP/1.1" 200 -]
+[2024-05-24 21:05:40,668: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'model\model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-05-24 21:05:40,738: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:05:40] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-24 21:08:20,945: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:08:20] "GET / HTTP/1.1" 200 -]
+[2024-05-24 21:08:42,272: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'model\model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-05-24 21:08:42,272: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:08:42] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-24 21:09:08,081: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:09:08] "GET / HTTP/1.1" 200 -]
+[2024-05-24 21:09:24,571: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-24 21:09:24,571: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-24 21:09:43,126: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:09:43] "GET / HTTP/1.1" 200 -]
+[2024-05-24 21:09:53,166: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'model\model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-05-24 21:09:53,170: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:09:53] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-24 21:10:22,006: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:10:22] "GET / HTTP/1.1" 200 -]
+[2024-05-24 21:18:10,481: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-24 21:18:10,481: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-24 21:18:28,428: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:18:28] "GET / HTTP/1.1" 200 -]
+[2024-05-24 21:18:39,684: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-24 21:18:40,155: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:18:40] "POST /predict HTTP/1.1" 200 -]
+[2024-05-24 21:19:32,033: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-24 21:19:32,283: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:19:32] "POST /predict HTTP/1.1" 200 -]
+[2024-05-24 21:19:35,819: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-24 21:19:36,053: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:19:36] "POST /predict HTTP/1.1" 200 -]
+[2024-05-24 21:19:43,003: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-24 21:19:43,252: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:19:43] "POST /predict HTTP/1.1" 200 -]
+[2024-05-24 21:19:59,956: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-24 21:20:00,202: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000201719407C0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-24 21:20:00,205: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:20:00] "POST /predict HTTP/1.1" 200 -]
+[2024-05-24 21:20:01,544: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-24 21:20:01,781: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000020171975E40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-24 21:20:01,784: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:20:01] "POST /predict HTTP/1.1" 200 -]
+[2024-05-24 21:20:36,570: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-24 21:20:36,820: INFO: _internal: 127.0.0.1 - - [24/May/2024 21:20:36] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:07:21,868: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 00:07:21,947: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 00:07:29,102: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:07:29] "GET / HTTP/1.1" 200 -]
+[2024-05-25 00:07:39,798: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:07:40,258: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:07:40] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:07:51,294: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:07:51,531: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:07:51] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:07:59,843: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:00,076: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:00] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:11,340: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:11,583: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:11] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:12,810: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:13,043: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000010AAAD107C0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 00:08:13,047: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:13] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:21,890: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:22,134: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000010AAAD45E40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 00:08:22,136: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:22] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:31,484: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:31,720: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:31] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:39,121: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:39,357: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:39] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:47,313: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:47,544: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:47] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:48,840: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:49,063: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:49] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:08:55,837: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:08:56,064: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:08:56] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:10,503: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:10,729: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:10] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:17,973: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:18,207: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:18] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:19,221: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:19,460: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:19] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:25,910: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:26,139: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:26] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:27,136: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:27,368: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:27] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:33,450: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:33,716: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:33] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:44,761: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:44,998: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:44] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:52,241: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:52,491: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:52] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:09:59,406: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:09:59,632: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:09:59] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:10:05,103: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:10:05,344: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:10:05] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:10:14,034: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:10:14,270: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:10:14] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:10:28,835: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:10:29,068: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:10:29] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:10:30,079: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:10:30,319: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:10:30] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:10:35,362: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:10:35,603: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:10:35] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:14:19,999: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 00:14:19,999: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 00:14:20,139: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:14:20] "GET / HTTP/1.1" 200 -]
+[2024-05-25 00:14:28,165: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:14:28,437: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:14:28] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:14:39,727: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:14:39,977: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:14:39] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:14:46,149: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:14:46,392: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:14:46] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:14:52,328: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:14:52,579: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:14:52] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:14:58,197: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:14:58,448: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000020F6B0347C0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 00:14:58,450: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:14:58] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:15:08,236: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:15:08,494: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000020F6B069E40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 00:15:08,496: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:15:08] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:15:13,261: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:15:13,515: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:15:13] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:15:18,520: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:15:18,771: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:15:18] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:30:15,225: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 00:30:15,225: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 00:30:21,131: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:30:21] "GET / HTTP/1.1" 200 -]
+[2024-05-25 00:30:29,178: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\app.py", line 35, in predictRoute
+    image_file.save(image_path)
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+          ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'uploads\\Stone- (90).jpg'
+[2024-05-25 00:30:29,194: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:30:29] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-25 00:32:23,878: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 00:32:23,879: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 00:32:29,288: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:32:29] "GET / HTTP/1.1" 200 -]
+[2024-05-25 00:32:35,607: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:32:35] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:35:00,621: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 00:35:00,624: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 00:35:01,881: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:35:01] "GET / HTTP/1.1" 200 -]
+[2024-05-25 00:35:09,522: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 00:35:10,014: INFO: _internal: 127.0.0.1 - - [25/May/2024 00:35:10] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 00:50:12,700: INFO: font_manager: generated new fontManager]
+[2024-05-25 01:16:48,813: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 01:16:48,911: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:16:56,433: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:16:56] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:17:05,897: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:17:05] "[31m[1mPOST /predict HTTP/1.1[0m" 415 -]
+[2024-05-25 01:17:58,783: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 01:17:58,783: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:18:08,923: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:18:08] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:18:15,973: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'model\model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-05-25 01:18:16,044: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:18:16] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-25 01:25:03,974: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.67.1.105:5000]
+[2024-05-25 01:25:03,974: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:25:52,373: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.67.1.105:8000]
+[2024-05-25 01:25:52,381: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:26:22,374: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:26:22] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:26:25,428: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:26:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2024-05-25 01:26:42,856: ERROR: _internal: 10.67.1.105 - - [25/May/2024 01:26:42] code 400, message Bad request version ('¿\x9a¿ïñúõ(\x1a\x06ö\x91¡S+"Xw!½3µà')]
+[2024-05-25 01:26:42,858: INFO: _internal: 10.67.1.105 - - [25/May/2024 01:26:42] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03<\x90\x13\x87Ê\x98\x0e\x8f<\x0fÎ\x19n{â/Y\x1eqU\x81\x99\x06ox^\x1a\x8fî3\x1dô ¿\x9a¿ïñúõ(\x1a\x06ö\x91¡S+"Xw!½3µà[0m" 400 -]
+[2024-05-25 01:26:42,861: ERROR: _internal: 10.67.1.105 - - [25/May/2024 01:26:42] code 400, message Bad request version ('\x81I\x96ô-\x0f»')]
+[2024-05-25 01:26:42,862: INFO: _internal: 10.67.1.105 - - [25/May/2024 01:26:42] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03Sý\x11,«S¶\x8fæ-Ï^j\x07\x10äó\x92E2\x84w\x85s!WÝA\x85ÂÒ\x17 ,\x9f´ÎüT>ÇVz0í\x00\x0ct\x85½\x10ÏysÊ\x96\x18ã¢\x81öÍ\x94òU\x00 **\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063JJ\x00\x00þ\x0d\x00º\x00\x00\x01\x00\x01W\x00 ë\x84Û\x92SãNÇ2ß¢+®¤hX\x93dhS'Ñ\x9b¬£ø\x84>\x03Ò\x8df\x00\x90\x09Â×,÷\x9dþ¹\x97\x85\x81I\x96ô-\x0f»[0m" 400 -]
+[2024-05-25 01:26:44,288: INFO: _internal: 10.67.1.105 - - [25/May/2024 01:26:44] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:26:47,468: INFO: _internal: 10.67.1.105 - - [25/May/2024 01:26:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2024-05-25 01:39:45,847: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.67.1.105:8000]
+[2024-05-25 01:39:45,938: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:39:53,246: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:39:53] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:42:46,575: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 01:42:46,575: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:42:51,417: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:42:51] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:42:54,492: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:42:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2024-05-25 01:43:02,629: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:03,224: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:03] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:03,298: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:03,302: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:03] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:06,281: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:06,547: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:06] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:07,102: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:07,337: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:07] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:08,245: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:08,514: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:08] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:09,041: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:09,310: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001C4A3730F40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 01:43:09,314: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:09] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:17,485: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:17,707: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001C4A376E5C0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 01:43:17,716: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:17] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:18,755: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:19,059: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:19] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:19,118: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:19,118: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:19] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:26,199: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:26,427: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:26] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:33,240: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:33,467: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:33] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:34,866: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:35,174: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:35] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:35,274: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:35,277: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:35] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:35,428: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:36,032: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:36] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:41,405: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:41,640: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:41] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:42,905: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:43,138: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:43] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:44,116: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:44,452: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:44] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:44,511: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:44,741: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:44,917: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:44] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:45,088: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:45,252: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:45] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:45,282: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:45,293: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:45] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:45,497: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:45] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:47,467: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:47,711: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:47] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:43:48,327: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 01:43:48,569: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:43:48] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:44:19,127: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 01:44:19,127: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:44:23,791: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:44:23] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:44:31,221: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:44:31] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:44:32,598: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:44:32] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:44:33,298: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:44:33] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:44:33,517: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:44:33] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 01:48:26,377: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 01:48:26,377: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 01:48:36,517: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:48:36] "GET / HTTP/1.1" 200 -]
+[2024-05-25 01:48:53,221: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'model\model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-05-25 01:48:53,273: INFO: _internal: 127.0.0.1 - - [25/May/2024 01:48:53] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-25 02:06:08,703: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-25 02:06:08,706: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 02:06:08,706: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 02:06:08,706: INFO: common: created directory at: artifacts]
+[2024-05-25 02:06:08,706: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-25 02:06:08,706: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1yXkOfYmGqGMB1CvmD5qouaKV21f7jHVS/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-25 02:06:38,601: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1yXkOfYmGqGMB1CvmD5qouaKV21f7jHVS/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-25 02:06:39,181: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-25 02:06:39,181: INFO: main: *******************]
+[2024-05-25 02:06:39,181: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-05-25 02:06:39,183: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 02:06:39,184: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 02:06:39,185: INFO: common: created directory at: artifacts]
+[2024-05-25 02:06:39,185: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-05-25 02:06:39,800: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 02:06:40,030: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 02:06:40,285: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-05-25 02:06:40,287: INFO: main: *******************]
+[2024-05-25 02:06:40,287: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-05-25 02:06:40,288: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 02:06:40,288: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 02:06:40,288: INFO: common: created directory at: artifacts]
+[2024-05-25 02:06:40,288: INFO: common: created directory at: artifacts\training]
+[2024-05-25 02:06:40,629: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 02:07:20,976: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 02:07:21,106: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-05-25 02:07:21,107: INFO: main: *******************]
+[2024-05-25 02:07:21,107: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-25 02:07:21,107: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 02:07:21,107: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 02:07:21,107: INFO: common: created directory at: artifacts]
+[2024-05-25 02:07:21,374: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 02:07:55,417: INFO: common: json file saved at: scores.json]
+[2024-05-25 02:07:55,426: INFO: common: json file saved at: scores.json]
+[2024-05-25 02:07:55,426: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-05-25 11:58:38,970: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 11:58:39,060: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 11:58:50,664: INFO: _internal: 127.0.0.1 - - [25/May/2024 11:58:50] "GET / HTTP/1.1" 200 -]
+[2024-05-25 11:59:01,999: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'model\model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-05-25 11:59:02,064: INFO: _internal: 127.0.0.1 - - [25/May/2024 11:59:02] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-25 12:43:13,922: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 12:43:14,014: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 12:43:21,295: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:43:21] "GET / HTTP/1.1" 200 -]
+[2024-05-25 12:43:33,745: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:43:34,255: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:43:34] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:43:42,365: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:43:42,643: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:43:42] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:43:52,932: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:43:53,328: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:43:53] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:44:00,592: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:44:00,886: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:44:00] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:44:16,622: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:44:16,905: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000200AA48F880> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 12:44:16,911: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:44:16] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:44:22,294: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:44:22,575: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000200AF4EACA0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 12:44:22,575: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:44:22] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:44:27,893: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:44:28,171: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:44:28] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:44:43,542: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:44:43,818: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:44:43] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:46:44,657: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:46:44,918: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:46:44] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:46:52,945: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:46:53,217: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:46:53] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:47:01,940: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:47:02,204: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:47:02] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:49:38,852: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:49:39,242: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:49:39] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:49:51,628: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:49:51,915: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:49:51] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:06,756: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:07,069: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:07] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:14,196: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:14,485: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:14] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:22,317: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:22,629: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:22] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:28,626: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:28,899: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:28] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:39,826: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:40,132: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:40] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:45,891: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:46,162: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:46] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:52,828: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:53,099: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:53] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:50:59,198: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:50:59,470: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:50:59] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:51:05,532: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:51:05,836: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:51:05] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:51:21,434: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:51:21,717: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:51:21] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:51:27,599: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:51:27,880: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:51:27] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:51:36,060: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:51:36,384: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:51:36] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:51:45,582: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:51:45,938: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:51:45] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:51:53,161: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:51:53,450: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:51:53] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:00,780: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:01,049: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:01] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:07,333: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:07,598: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:07] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:14,249: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:14,520: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:14] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:21,108: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:21,392: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:21] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:27,780: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:28,054: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:28] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:33,482: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:33,755: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:33] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:45,136: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:45,408: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:45] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:52:51,462: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:52:51,733: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:52:51] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:55:23,301: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:55:23,588: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:55:23] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:55:48,316: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:55:48,579: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:55:48] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:56:16,426: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:56:16,692: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:56:16] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:56:45,550: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:56:45,846: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:56:45] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 12:56:55,215: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 12:56:55,484: INFO: _internal: 127.0.0.1 - - [25/May/2024 12:56:55] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:26:21,740: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.67.1.105:8080]
+[2024-05-25 17:26:21,835: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-25 17:26:26,030: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:26:26] "GET / HTTP/1.1" 200 -]
+[2024-05-25 17:26:43,767: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:26:44,224: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:26:44] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:26:54,742: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:26:54,990: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:26:54] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:27:04,716: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:27:05,071: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:27:05] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:27:16,154: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:27:16,403: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:27:16] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:27:29,985: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:27:30,257: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000021A9E33F880> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 17:27:30,262: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:27:30] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:27:37,871: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:27:38,124: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000021A9F00ACA0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-05-25 17:27:38,124: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:27:38] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:27:44,934: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:27:45,295: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:27:45] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:27:56,113: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:27:56,391: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:27:56] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:28:03,666: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:28:03,929: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:28:03] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:28:15,423: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:28:15,726: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:28:15] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:28:25,828: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:28:26,097: INFO: _internal: 127.0.0.1 - - [25/May/2024 17:28:26] "POST /predict HTTP/1.1" 200 -]
+[2024-05-25 17:34:45,283: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-25 17:34:45,283: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:34:45,299: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:34:45,299: INFO: common: created directory at: artifacts]
+[2024-05-25 17:34:45,299: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-25 17:34:45,299: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1yXkOfYmGqGMB1CvmD5qouaKV21f7jHVS/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-25 17:35:16,173: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1yXkOfYmGqGMB1CvmD5qouaKV21f7jHVS/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-25 17:35:16,542: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-25 17:35:16,542: INFO: main: *******************]
+[2024-05-25 17:35:16,542: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-05-25 17:35:16,542: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:35:16,542: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:35:16,542: INFO: common: created directory at: artifacts]
+[2024-05-25 17:35:16,542: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-05-25 17:35:16,862: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 17:35:17,070: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 17:35:17,173: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-05-25 17:35:17,173: INFO: main: *******************]
+[2024-05-25 17:35:17,173: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-05-25 17:35:17,173: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:35:17,173: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:35:17,173: INFO: common: created directory at: artifacts]
+[2024-05-25 17:35:17,173: INFO: common: created directory at: artifacts\training]
+[2024-05-25 17:35:17,328: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:35:52,927: ERROR: main: 'NoneType' object has no attribute 'items']
+Traceback (most recent call last):
+  File "F:\kidney_diseases_classification\main.py", line 37, in <module>
+    model_trainer.main()
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\stage_03_model_training.py", line 21, in main
+    training.train()
+  File "F:\kidney_diseases_classification\src\cnnClassifier\components\model_training.py", line 80, in train
+    self.model.fit(
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\backend\tensorflow\trainer.py", line 350, in fit
+    "val_" + name: val for name, val in val_logs.items()
+                                        ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'
+[2024-05-25 17:35:53,039: INFO: main: *******************]
+[2024-05-25 17:35:53,039: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-25 17:35:53,039: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:35:53,039: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:35:53,039: INFO: common: created directory at: artifacts]
+[2024-05-25 17:35:54,478: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:36:28,547: INFO: common: json file saved at: scores.json]
+[2024-05-25 17:36:28,547: INFO: common: json file saved at: scores.json]
+[2024-05-25 17:36:28,547: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-05-25 17:39:53,021: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:39:53,025: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:39:53,025: INFO: common: created directory at: artifacts]
+[2024-05-25 17:39:53,244: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:40:28,487: INFO: common: json file saved at: scores.json]
+[2024-05-25 17:55:40,584: INFO: stage_03_model_training: *******************]
+[2024-05-25 17:55:40,584: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2024-05-25 17:55:40,584: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:55:40,584: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:55:40,584: INFO: common: created directory at: artifacts]
+[2024-05-25 17:55:40,584: INFO: common: created directory at: artifacts\training]
+[2024-05-25 17:55:40,824: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:56:17,459: ERROR: stage_03_model_training: 'NoneType' object has no attribute 'items']
+Traceback (most recent call last):
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\stage_03_model_training.py", line 30, in <module>
+    obj.main()
+  File "F:\kidney_diseases_classification\src\cnnClassifier\pipeline\stage_03_model_training.py", line 21, in main
+    training.train()
+  File "F:\kidney_diseases_classification\src\cnnClassifier\components\model_training.py", line 80, in train
+    self.model.fit(
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Mallik\AppData\Roaming\Python\Python311\site-packages\keras\src\backend\tensorflow\trainer.py", line 350, in fit
+    "val_" + name: val for name, val in val_logs.items()
+                                        ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'
+[2024-05-25 17:57:57,586: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:57:57,591: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:57:57,593: INFO: common: created directory at: artifacts]
+[2024-05-25 17:57:57,866: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 17:58:39,323: INFO: common: json file saved at: scores.json]
+[2024-05-25 17:59:25,930: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-25 17:59:25,932: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:59:25,932: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:59:25,932: INFO: common: created directory at: artifacts]
+[2024-05-25 17:59:25,932: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-25 17:59:25,932: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1yXkOfYmGqGMB1CvmD5qouaKV21f7jHVS/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-25 17:59:59,141: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1yXkOfYmGqGMB1CvmD5qouaKV21f7jHVS/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-25 17:59:59,520: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-25 17:59:59,520: INFO: main: *******************]
+[2024-05-25 17:59:59,520: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-05-25 17:59:59,520: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 17:59:59,520: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 17:59:59,520: INFO: common: created directory at: artifacts]
+[2024-05-25 17:59:59,520: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-05-25 17:59:59,852: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 18:00:00,100: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 18:00:00,450: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-05-25 18:00:00,450: INFO: main: *******************]
+[2024-05-25 18:00:00,450: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-05-25 18:00:00,450: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 18:00:00,450: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 18:00:00,450: INFO: common: created directory at: artifacts]
+[2024-05-25 18:00:00,450: INFO: common: created directory at: artifacts\training]
+[2024-05-25 18:00:00,645: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 18:00:35,569: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-25 18:00:35,759: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-05-25 18:00:35,760: INFO: main: *******************]
+[2024-05-25 18:00:35,760: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-25 18:00:35,763: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-25 18:00:35,764: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-25 18:00:35,764: INFO: common: created directory at: artifacts]
+[2024-05-25 18:00:35,930: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-25 18:01:12,540: INFO: common: json file saved at: scores.json]
+[2024-05-25 18:01:12,540: INFO: common: json file saved at: scores.json]
+[2024-05-25 18:01:12,540: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
